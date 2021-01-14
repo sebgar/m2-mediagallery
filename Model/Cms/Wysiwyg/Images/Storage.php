@@ -29,11 +29,14 @@ class Storage extends \Magento\Cms\Model\Wysiwyg\Images\Storage
             throw new \Magento\Framework\Exception\LocalizedException(__('We can\'t upload the file right now.'));
         }
 
-        // Change Start
+        ///// BEGIN SGA
         if (strtolower($uploader->getFileExtension()) !== 'pdf') {
+        ///// END SGA
             // Create Thumbnail
             $this->resizeFile($targetPath . '/' . $uploader->getUploadedFileName(), true);
+        ///// BEGIN SGA
         }
+        ///// END SGA
 
         return $result;
     }
