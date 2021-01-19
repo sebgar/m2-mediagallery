@@ -1,1 +1,1 @@
-# m2-deferjs
+# m2-mediagallery
