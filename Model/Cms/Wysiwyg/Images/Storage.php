@@ -30,7 +30,8 @@ class Storage extends \Magento\Cms\Model\Wysiwyg\Images\Storage
         }
 
         ///// BEGIN SGA
-        if (strtolower($uploader->getFileExtension()) !== 'pdf') {
+        $extensions = ['jpg','jpeg','png','gif'];
+        if (in_array(strtolower($uploader->getFileExtension()), $extensions)) {
         ///// END SGA
             // Create Thumbnail
             $this->resizeFile($targetPath . '/' . $uploader->getUploadedFileName(), true);
